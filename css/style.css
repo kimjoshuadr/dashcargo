@@ -1,0 +1,75 @@
+/* *****************************************
+/* VARIABLES
+/*******************************************/
+:root{
+    --body-color: #A8D0E6;
+    --alert-color: #374785;
+    --color-white: #DADADA;
+
+    --first-color: #24305E;
+    --second-color: #F76C6C;
+    --third-color: #e4d067;
+
+    --first-color-hover: #e4d482;
+
+}
+/******************************************
+/* GLOBAL DESIGN
+/*******************************************/
+.dropdown-item{
+    white-space: normal;
+}
+/******************************************
+/* SCROLLING STYLE
+/*******************************************/
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-track{
+    background: #0d0e13;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--color-white);
+    border-radius: 30px;
+}
+/******************************************
+/*HEADER
+/*******************************************/
+header .alert{
+    background: var(--alert-color);
+    border-radius: 0;
+}
+header .alert p, header .alert a{
+    color: var(--body-color);
+}
+header .alert span{
+    text-decoration: underline;
+}
+.navbar{
+    background: var(--body-color);
+    font-family: 'Tenor Sans', sans-serif;
+}
+.navbar > .container *{
+    flex-grow: 1;
+}
+.btn-gs{
+    background: var(--third-color);
+}
+.btn-gs:hover{
+    background: var(--first-color-hover);
+}
+#brand-name{
+    font-weight: 500;
+    font-size: 30px;
+}
+/******************************************
+/* HERO SECTION
+/*******************************************/
+.hero{
+    background: var(--body-color);
+    height: 150vh;
+}
