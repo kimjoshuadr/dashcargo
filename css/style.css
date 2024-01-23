@@ -12,12 +12,17 @@
 
     --first-color-hover: #e4d482;
 
+    --card-color: #bddaea;
+
 }
 /******************************************
 /* GLOBAL DESIGN
 /*******************************************/
 .dropdown-item{
     white-space: normal;
+}
+.main{
+    padding: 20px;
 }
 /******************************************
 /* SCROLLING STYLE
@@ -51,6 +56,8 @@ html{
 }
 .navbar{
     background: var(--body-color);
+}
+.navbar, .hero p, .solutions{
     font-family: 'Tenor Sans', sans-serif;
 }
 .navbar > .container *{
@@ -63,13 +70,48 @@ html{
     background: var(--first-color-hover);
 }
 #brand-name{
-    font-weight: 500;
     font-size: 30px;
 }
 /******************************************
 /* HERO SECTION
 /*******************************************/
-.hero{
+.hero, .solutions{
     background: var(--body-color);
-    height: 50vh;
+}
+.hero .row{
+    min-height: 50vh;
+}
+.hero h1{
+    font-family: ivypresto-display, serif;
+}
+/******************************************
+/* SOLUTIONS SECTION
+/*******************************************/
+.solutions .card{
+    background: var(--card-color);
+}
+.solutions .card-img-top{
+    height: 75%;
+    object-fit: cover;
+}
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+@media only screen and (min-width: 576px) {
+    #navbarSupportedContent{
+        position: relative !important;
+    }
+}
+@media (min-width: 778px) {
+    .hero p{
+        width: 75%;
+    }
+}
+@media (min-width: 992px) {
+    #navbarSupportedContent{
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
 }
