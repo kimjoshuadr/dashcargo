@@ -39,14 +39,14 @@ html{
 /******************************************
 /*HEADER
 /*******************************************/
-header .alert{
+.top-notif.alert{
     background: var(--alert-color);
     border-radius: 0;
 }
-header .alert p, header .alert a{
+.top-notif.alert p, .top-notif.alert a{
     color: var(--body-color);
 }
-header .alert span{
+.top-notif.alert span{
     text-decoration: underline;
 }
 .navbar{
@@ -71,5 +71,5 @@ header .alert span{
 /*******************************************/
 .hero{
     background: var(--body-color);
-    height: 150vh;
+    height: 50vh;
 }
