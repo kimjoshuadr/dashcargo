@@ -3,6 +3,7 @@
 /*******************************************/
 :root{
     --body-color: #A8D0E6;
+    --body-color-dark: #8ca8b6;
     --alert-color: #374785;
     --color-white: #DADADA;
 
@@ -11,9 +12,10 @@
     --third-color: #e4d067;
 
     --first-color-hover: #e4d482;
+    --second-color-hover: #1c2548;
 
     --card-color: #bddaea;
-
+    --shadow-color: #00000018;
 }
 /******************************************
 /* GLOBAL DESIGN
@@ -23,6 +25,11 @@
 }
 .main{
     padding: 20px;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
 }
 /******************************************
 /* SCROLLING STYLE
@@ -35,7 +42,7 @@ html{
     border-radius: 25px;
 }
 ::-webkit-scrollbar-track{
-    background: #0d0e13;
+    background: #7f9eae;
 }
 ::-webkit-scrollbar-thumb{
     background: var(--color-white);
@@ -57,7 +64,7 @@ html{
 .navbar{
     background: var(--body-color);
 }
-.navbar, .hero p, .solutions{
+.navbar, #hero p, #solutions{
     font-family: 'Tenor Sans', sans-serif;
 }
 .navbar > .container *{
@@ -75,24 +82,89 @@ html{
 /******************************************
 /* HERO SECTION
 /*******************************************/
-.hero, .solutions{
+#hero, #solutions{
     background: var(--body-color);
 }
-.hero .row{
+#hero .row{
     min-height: 50vh;
 }
-.hero h1{
+#hero h1{
     font-family: ivypresto-display, serif;
 }
 /******************************************
 /* SOLUTIONS SECTION
 /*******************************************/
-.solutions .card{
+#solutions { 
+    background-color: #a8d0e6;
+    position: relative;
+  }
+#solutions::before {   
+    content: "";
+    width: 100%;
+    height: 65px;
+    position: absolute;
+    bottom: -0.3%;
+    left: 0;
+    background-size: auto;
+    background-repeat: repeat no-repeat;
+    background-position: 20vw bottom;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  134' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 98L50 92C100 86 200 74 300 50C400 26 500 -10 600 2C700 14 800 74 900 98C1000 122 1100 110 1150 104L1200 98V134H1150C1100 134 1000 134 900 134C800 134 700 134 600 134C500 134 400 134 300 134C200 134 100 134 50 134H0V98Z' fill='%23dadada'/></svg>");
+}
+#solutions .card{
     background: var(--card-color);
 }
-.solutions .card-img-top{
+#solutions .card-img-top{
     height: 75%;
     object-fit: cover;
+    object-position: top;
+}
+#solutions .card:hover{
+    background: var(--color-white);
+    box-shadow: 1px 8px 10px 2px var(--shadow-color);
+    transition: 0.3s;
+}
+#solutions .btn-gs{
+    width: 200px;
+    background: var(--second-color);
+    font-family: ivypresto-display, serif;
+    border-radius: 50px;
+}
+#solutions .btn-gs:hover{
+    background: var(--second-color-hover);
+}
+#solutions .icon i{
+    color: var(--second-color);
+}
+.solutions-bottom-text{
+    background-color: var(--body-color-dark);
+    z-index: 1;
+}
+/******************************************
+/* VISUAL EFFECTS
+/*******************************************/
+.fade-out {
+    animation: fadeOut ease 0.3s;
+    animation-fill-mode: forwards;
+}
+.fade-in {
+    animation: fadeIn ease 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    1000% {
+      opacity: 1;
+    }
 }
 /******************************************
 /* MEDIA QUERIES
@@ -103,9 +175,12 @@ html{
     }
 }
 @media (min-width: 778px) {
-    .hero p{
+    #hero p{
         width: 75%;
     }
+    #solutions::before {    
+        height: 130px
+    } 
 }
 @media (min-width: 992px) {
     #navbarSupportedContent{
@@ -113,5 +188,8 @@ html{
         top: 50% !important;
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
+    }
+    #solutions{
+        min-height: 900px;
     }
 }
